@@ -1,0 +1,20 @@
+查看内存占用最高的进程：
+
+ps -eo pid,ppid,cmd,%mem --sort=-%mem | head -n 10
+终止高内存占用的进程（PID：149210, 149041, 149458）：
+
+sudo kill 149210 149041 149458
+检查MySQL服务名称：
+
+sudo systemctl list-units --type=service | grep -i mysql
+停止并禁用MySQL服务：
+
+sudo systemctl stop mysql && sudo systemctl disable mysql
+确认MySQL服务状态：
+
+sudo systemctl status mysql
+这些命令帮助我们完成了以下任务：
+
+确认并清理了openclaw相关进程
+识别并终止了高内存占用的进程
+成功停止并禁用了MySQL服务
